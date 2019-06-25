@@ -69,7 +69,7 @@ FontDescriptor *createFontDescriptor(CTFontDescriptorRef descriptor) {
 }
 
 ResultSet *getAvailableFonts() {
-  static CTFontCollectionRef collection = CTFontCollectionCreateFromAvailableFonts(NULL);
+  CTFontCollectionRef collection = CTFontCollectionCreateFromAvailableFonts(NULL);
 
   NSArray *matches = (NSArray *) CTFontCollectionCreateMatchingFontDescriptors(collection);
   ResultSet *results = new ResultSet();
